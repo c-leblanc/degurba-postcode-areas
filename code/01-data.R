@@ -110,15 +110,15 @@ if (!dir.exists(path)) {
   path %>%
     dir.create(recursive = TRUE)
 }
-if (!file.exists(paste0(path, "/URAU_RG_01M_2018_3035_FUA.shp"))) {
+if (!file.exists(paste0(path, "/URAU_RG_01M_2018_3035.shp"))) {
   download.file(url = "https://gisco-services.ec.europa.eu/distribution/v2/urau/download/ref-urau-2018-01m.shp.zip",
                 destfile = paste0(path, "/fua-2018.zip"))
   unzip(zipfile = paste0(path, "/fua-2018.zip"),
-        files = "URAU_RG_01M_2018_3035_FUA.shp.zip",
+        files = "URAU_RG_01M_2018_3035.shp.zip",
         exdir = path)
-  unzip(zipfile = paste0(path, "/URAU_RG_01M_2018_3035_FUA.shp.zip"),
+  unzip(zipfile = paste0(path, "/URAU_RG_01M_2018_3035.shp.zip"),
         exdir = path) 
-  file.remove(c(paste0(path,"/fua-2018.zip"), paste0(path, "/URAU_RG_01M_2018_3035_FUA.shp.zip")))
+  file.remove(c(paste0(path,"/fua-2018.zip"), paste0(path, "/URAU_RG_01M_2018_3035.shp.zip")))
 }
 
 # download latest available postcode area data ------------------------------------------
